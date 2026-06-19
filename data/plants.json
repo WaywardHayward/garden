@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "owner": "Alex",
+    "source": "Hand-drawn layout sketch (Alex-confirmed) + photos, 2026-06-19",
+    "updated": "2026-06-19",
+    "notes": "Sheltered sun-trap garden (olive + fig thrive). Strong evening/western sun. Two Gardena soil sensors: 'Back Garden' and 'Front Garden'."
+  },
+  "zones": [
+    { "id": "north", "label": "North run (top wall)" },
+    { "id": "east", "label": "East boundary (right, climbers + fountain)" },
+    { "id": "south", "label": "South run (bottom, Mediterranean herbs)" },
+    { "id": "west", "label": "West side (left, roses + bulbs + compost)" },
+    { "id": "centre", "label": "Centre beds + lawn" }
+  ],
+  "plants": [
+    { "name": "Fennel", "latin": "Foeniculum vulgare", "type": "herb", "zone": "north", "count": 2, "notes": "Tall feathery; one NE corner, one SW corner. Self-seeds." },
+    { "name": "Currants", "latin": "Ribes", "type": "fruit", "zone": "north", "notes": "Winter prune (open goblet)." },
+    { "name": "Strawberries", "latin": "Fragaria", "type": "fruit", "zone": "north", "notes": "Net against birds; runners can be potted on." },
+    { "name": "Espalier apple", "latin": "Malus domestica", "type": "tree", "zone": "north", "notes": "Trained flat on wall; summer prune for shape, winter for structure." },
+    { "name": "Globe artichoke", "latin": "Cynara scolymus", "type": "perennial", "zone": "north", "notes": "Architectural; mulch crown over winter." },
+    { "name": "Cola plant", "latin": "Artemisia abrotanum var.", "type": "herb", "zone": "north", "notes": "Cola-scented southernwood. Confirmed." },
+    { "name": "Jasmine", "latin": "Jasminum", "type": "climber", "zone": "north", "notes": "Scented; prune after flowering." },
+    { "name": "Thyme", "latin": "Thymus", "type": "herb", "zone": "centre", "notes": "By the bench. Trim after flowering." },
+    { "name": "Cherry", "latin": "Prunus avium", "type": "tree", "zone": "west", "notes": "Prune in summer (avoid silver leaf risk of winter cuts)." },
+    { "name": "Pear", "latin": "Pyrus communis", "type": "tree", "zone": "west" },
+    { "name": "Lavender", "latin": "Lavandula", "type": "shrub", "zone": "west", "count": 4, "notes": "French lavender (stoechas) by the path. Prune lightly after flowering; never into old wood." },
+    { "name": "Lily", "latin": "Lilium", "type": "bulb", "zone": "west", "notes": "Watch for lily beetle (red)." },
+    { "name": "Angel wings", "latin": "Senecio candicans", "type": "perennial", "zone": "west", "notes": "Silver foliage. Confirmed." },
+    { "name": "Canterbury bells", "latin": "Campanula medium", "type": "perennial", "zone": "west", "notes": "Biennial; let some self-seed." },
+    { "name": "Salvia", "latin": "Salvia", "type": "perennial", "zone": "west" },
+    { "name": "Sage", "latin": "Salvia officinalis", "type": "herb", "zone": "west" },
+    { "name": "Roses (standard)", "latin": "Rosa", "type": "shrub", "zone": "west", "notes": "Standards near bulb bed. Winter/early-spring prune; deadhead through summer." },
+    { "name": "Echinacea", "latin": "Echinacea purpurea", "type": "perennial", "zone": "centre", "notes": "Coneflower (sketch sp. 'ecchinacia'). Great for pollinators; leave seedheads for goldfinches." },
+    { "name": "Apple tree", "latin": "Malus domestica", "type": "tree", "zone": "centre" },
+    { "name": "Lemon verbena", "latin": "Aloysia citrodora", "type": "herb", "zone": "centre", "notes": "Tender; protect roots over winter." },
+    { "name": "Mint", "latin": "Mentha", "type": "herb", "zone": "centre", "notes": "Keep contained (pot/bucket) or it runs." },
+    { "name": "Lupins", "latin": "Lupinus", "type": "perennial", "zone": "centre", "notes": "Watch for lupin aphid." },
+    { "name": "Tansy", "latin": "Tanacetum vulgare", "type": "herb", "zone": "centre", "notes": "Vigorous; can be invasive." },
+    { "name": "Wildflower strips", "latin": "mixed", "type": "annual", "zone": "centre", "notes": "Pollinator strip." },
+    { "name": "Rosemary", "latin": "Salvia rosmarinus", "type": "herb", "zone": "south", "count": 2, "notes": "Big feathery specimen centre-right. Light trim after flowering." },
+    { "name": "Oregano", "latin": "Origanum vulgare", "type": "herb", "zone": "south" },
+    { "name": "Broom", "latin": "Cytisus", "type": "shrub", "zone": "south", "notes": "Prune after flowering; never into old wood." },
+    { "name": "Curry plant", "latin": "Helichrysum italicum", "type": "herb", "zone": "south", "notes": "Silver, curry-scented; trim to keep tidy." },
+    { "name": "Rose (climber)", "latin": "Rosa", "type": "climber", "zone": "east", "notes": "Tie in laterals horizontally for more flower." },
+    { "name": "Honeysuckle", "latin": "Lonicera", "type": "climber", "zone": "east", "count": 2, "notes": "Scented; prune after flowering." },
+    { "name": "Clematis", "latin": "Clematis", "type": "climber", "zone": "east", "notes": "Prune group depends on variety — confirm before cutting." },
+    { "name": "Pampas grass", "latin": "Cortaderia selloana", "type": "grass", "zone": "east", "notes": "Comb out / cut back old foliage late winter (gloves!)." },
+    { "name": "Fig", "latin": "Ficus carica", "type": "tree", "zone": "east", "notes": "Thrives in the sun-trap. Prune in summer; protect embryo figs over winter." },
+    { "name": "Wisteria", "latin": "Wisteria", "type": "climber", "zone": "east", "notes": "Two prunes/year: Jul/Aug shorten whippy growth to ~5 buds, Jan/Feb to ~2 buds." },
+    { "name": "Gladioli", "latin": "Gladiolus", "type": "bulb", "zone": "west", "notes": "Lift corms after frost in colder years." },
+    { "name": "Daffodils", "latin": "Narcissus", "type": "bulb", "zone": "west", "notes": "Let foliage die back 6 weeks before tidying." },
+    { "name": "Tulips", "latin": "Tulipa", "type": "bulb", "zone": "west", "notes": "Plant Nov; lift if they go blind." },
+    { "name": "Crocus", "latin": "Crocus", "type": "bulb", "zone": "west", "notes": "Early bee forage." },
+    { "name": "Alliums", "latin": "Allium", "type": "bulb", "zone": "east", "notes": "Leave seedheads — sculptural + loved by bees." },
+    { "name": "Olive", "latin": "Olea europaea", "type": "tree", "zone": "centre", "count": 2, "notes": "From photos. Confirms sheltered sun-trap. Free-draining; protect in hard frost." },
+    { "name": "Red acer / berberis", "latin": "Acer / Berberis", "type": "shrub", "zone": "centre", "notes": "Crimson foliage pop (from photo)." },
+    { "name": "Dianthus / carnations", "latin": "Dianthus", "type": "perennial", "zone": "west", "notes": "White, by the path (from photo)." }
+  ],
+  "features": [
+    "Compost bin (NW)", "Shed (centre)", "Bench (centre)", "Fountain (E)",
+    "Stone Buddha head (by shed)", "Bird feeder station", "Rotary washing line", "Blue garden table"
+  ],
+  "sensors": {
+    "Back Garden": { "bed": "TBD — confirm with Alex", "note": "Reading 10% moisture / 2% battery at 2026-06-19 21:28 — dry + flat battery." },
+    "Front Garden": { "bed": "TBD — confirm with Alex", "note": "25% moisture / 49% battery at 2026-06-19 21:28." }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "note": "Month-by-month jobs tailored to Alex's actual plant list. UK / Scotland-ish timing — shift a week or two later for a cold spring. Always confirm clematis pruning group before cutting.",
+    "updated": "2026-06-19"
+  },
+  "months": [
+    { "month": "January",  "jobs": ["Winter-prune wisteria back to 2–3 buds", "Winter-prune currants (open goblet)", "Prune roses on a mild day", "Check stored gladioli corms"] },
+    { "month": "February", "jobs": ["Cut back pampas grass (gloves!) before new growth", "Finish rose pruning", "Plan/order seeds for wildflower strips", "Mulch beds while soil is bare"] },
+    { "month": "March",    "jobs": ["Top-dress + feed roses, fruit trees, wisteria", "Divide congested perennials (salvia, echinacea, lupins)", "Sow wildflower strips", "Pot on strawberry runners"] },
+    { "month": "April",    "jobs": ["Watch lily beetle (red) on emerging lilies", "Stake lupins + tall perennials early", "Plant out tender herbs once frost risk passes", "First mow / edge tidy"] },
+    { "month": "May",      "jobs": ["Watch lupin aphid", "Tie in clematis + climbing rose laterals horizontally", "Net strawberries against birds", "Move/protect lemon verbena + olives if late frost"] },
+    { "month": "June",     "jobs": ["Deadhead roses through the month", "Trim lavender lightly as first flush fades", "Summer-prune espalier apple (new shoots)", "Keep new plantings watered — sun-trap dries fast"] },
+    { "month": "July",     "jobs": ["First wisteria summer prune — whippy growth to ~5 buds", "Harvest currants", "Trim thyme/oregano after flowering", "Deadhead + feed pots"] },
+    { "month": "August",   "jobs": ["Finish wisteria summer prune", "Prune fig (after fruiting); protect next year's embryo figs later", "Trim rosemary + curry plant lightly", "Collect Canterbury bell / fennel seed"] },
+    { "month": "September","jobs": ["Divide overcrowded clumps", "Plant spring bulbs: crocus, daffs, alliums", "Cut back faded perennials (leave echinacea seedheads for goldfinches)", "Take herb cuttings (sage, rosemary)"] },
+    { "month": "October",  "jobs": ["Plant tulip bulbs", "Lift gladioli corms after first frost in a cold year", "Mulch globe artichoke crown", "Clear fallen fruit (apple/pear) to reduce disease"] },
+    { "month": "November", "jobs": ["Wrap/move olives + fig if hard frost forecast", "Protect lemon verbena roots (mulch/fleece)", "Plant bare-root fruit/roses", "Leave alliums + grasses standing for winter structure"] },
+    { "month": "December", "jobs": ["Tidy, but leave seedheads for birds", "Check ties + supports after storms", "Order seeds / plan next year", "Winter-prune apple/pear on a dry day"] }
+  ],
+  "rules_of_thumb": [
+    "Lavender, broom, curry plant: never cut into old bare wood — they don't reshoot.",
+    "Wisteria: two prunes a year (Jul/Aug to ~5 buds, Jan/Feb to ~2 buds) = best flowering.",
+    "Clematis: confirm pruning group (1/2/3) before cutting — getting it wrong loses a year of flower.",
+    "Cherry + plum-family: prune in summer, not winter, to dodge silver leaf.",
+    "Leave echinacea + allium seedheads standing — food + structure.",
+    "Sun-trap = fast drying. The Gardena Back Garden probe hit 10% — prioritise water there in heat."
+  ]
+}

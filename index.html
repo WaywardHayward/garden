@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex's Garden</title>
+  <meta name="description" content="A labelled plan, plant inventory, photos and a bespoke care calendar for Alex's garden." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>🌿 Alex's Garden</h1>
+    <p id="garden-note">A slow, aromatic plot — herbs, climbers, fruit and a sun-trap olive or two.</p>
+    <nav class="toc">
+      <a href="#layout">Layout</a>
+      <a href="#plants">Plants</a>
+      <a href="#photos">Photos</a>
+      <a href="#care">Care calendar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="layout">
+      <h2>The layout</h2>
+      <figure class="sketch-wrap">
+        <img src="assets/garden-layout-sketch.jpg" alt="Hand-drawn garden layout plan labelling each bed and plant" />
+        <figcaption>The original hand-drawn plan. North run along the top, climbers + fountain down the east, Mediterranean herbs across the south, roses + bulbs + compost down the west.</figcaption>
+      </figure>
+    </section>
+
+    <section id="plants">
+      <h2>What's growing</h2>
+      <div class="controls" id="plant-controls">
+        <span class="count" id="plant-count"></span>
+      </div>
+      <div class="grid" id="plant-grid"></div>
+    </section>
+
+    <section id="photos">
+      <h2>The garden today</h2>
+      <div class="gallery">
+        <figure><img src="assets/photo-lavender-path.jpg" alt="Purple French lavender along the path to the house" /><figcaption>French lavender (Lavandula stoechas) by the path.</figcaption></figure>
+        <figure><img src="assets/photo-buddha-shed-path.jpg" alt="Lavender and white carnations with a stone Buddha head by the green shed" /><figcaption>Lavender + dianthus, stone Buddha by the shed.</figcaption></figure>
+        <figure><img src="assets/photo-rosemary-olive-table.jpg" alt="Big rosemary, red-leaved shrub and an olive tree beyond the blue table" /><figcaption>The big rosemary, red acer and an olive beyond.</figcaption></figure>
+        <figure><img src="assets/photo-borders-alliums-wide.jpg" alt="Wide sunny view of the borders with alliums and white thrift" /><figcaption>Borders going over — alliums + sea thrift.</figcaption></figure>
+        <figure><img src="assets/photo-nightcam-fox.png" alt="Night camera still of a fox crossing the lawn" /><figcaption>A fox on the 21:10 night-cam. 🦊</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="care">
+      <h2>Care calendar</h2>
+      <p style="color:var(--ink-soft);font-style:italic;margin-top:-.4rem">Month-by-month jobs for these exact plants. The current month is highlighted.</p>
+      <div class="cal" id="care-cal"></div>
+      <h3 style="color:var(--green-deep);margin-top:1.75rem">Rules of thumb</h3>
+      <ul class="rules" id="care-rules"></ul>
+    </section>
+  </main>
+
+  <footer>
+    🐑 Maintained by Rabbie Pi · plant data in <code>data/plants.json</code>, jobs in <code>data/care.json</code> · add a plant by editing the JSON.
+  </footer>
+
+  <script src="js/garden.js"></script>
+</body>
+</html>
