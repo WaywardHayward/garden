@@ -58,12 +58,16 @@ function renderMap(plantsData, onZoneSelect) {
     const shape = BED_SHAPES[zoneId];
     if (!shape) return;
     const zone = plantsData.zones.find(z => z.id === zoneId);
+    // Prefer the canonical zone label from plants.json so map text stays in
+    // sync with the plant grid's zone note; fall back to the geometry label.
+    const zoneLabel = zone?.label?.split(" (")[0] || shape.label;
     const g = svgEl("g", {
       class: "bed",
       "data-zone": zoneId,
       tabindex: "0",
       role: "button",
-      "aria-label": `${shape.label}: ${counts[zoneId] || 0} plants`
+      "aria-pressed": "false",
+      "aria-label": `${zoneLabel}: ${counts[zoneId] || 0} plants`
     });
 
     g.append(svgEl("rect", { x: shape.x, y: shape.y, width: shape.w, height: shape.h, rx: 12, class: "bed-rect" }));
@@ -77,7 +81,7 @@ function renderMap(plantsData, onZoneSelect) {
       const glyph = svgEl("tspan", {});
       glyph.textContent = (ZONE_GLYPH[zoneId] || "🌱") + "  ";
       const nm = svgEl("tspan", {});
-      nm.textContent = shape.label;
+      nm.textContent = zoneLabel;
       const sub = svgEl("tspan", { class: "bed-sub-inline" });
       sub.textContent = `   ·  ${counts[zoneId] || 0} plants · ${shape.sub}`;
       line.append(glyph, nm, sub);
@@ -88,7 +92,7 @@ function renderMap(plantsData, onZoneSelect) {
       g.append(glyph);
 
       const name = svgEl("text", { x: cx, y: cy + 12, "text-anchor": "middle", class: "bed-name" });
-      name.textContent = shape.label;
+      name.textContent = zoneLabel;
       g.append(name);
 
       const meta = svgEl("text", { x: cx, y: cy + 32, "text-anchor": "middle", class: "bed-sub" });
@@ -97,9 +101,13 @@ function renderMap(plantsData, onZoneSelect) {
     }
 
     const select = () => {
-      svg.querySelectorAll(".bed").forEach(b => b.classList.remove("selected"));
+      svg.querySelectorAll(".bed").forEach(b => {
+        b.classList.remove("selected");
+        b.setAttribute("aria-pressed", "false");
+      });
       g.classList.add("selected");
-      onZoneSelect(zoneId, shape.label);
+      g.setAttribute("aria-pressed", "true");
+      onZoneSelect(zoneId, zoneLabel);
     };
     g.addEventListener("click", select);
     g.addEventListener("keydown", e => {
@@ -119,7 +127,10 @@ function renderMap(plantsData, onZoneSelect) {
 
   return {
     clearSelection() {
-      svg.querySelectorAll(".bed").forEach(b => b.classList.remove("selected"));
+      svg.querySelectorAll(".bed").forEach(b => {
+        b.classList.remove("selected");
+        b.setAttribute("aria-pressed", "false");
+      });
     }
   };
 }
