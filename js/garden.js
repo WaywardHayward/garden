@@ -79,9 +79,13 @@ function renderPlants(data) {
   types.forEach(t => controls.append(mkBtn(t[0].toUpperCase() + t.slice(1), t)));
 
   const api = {
+    onZoneReset: null,
     setZone(zone) {
       zoneFilter = zone;
       draw();
+      if (zone === "all" && typeof api.onZoneReset === "function") {
+        api.onZoneReset();
+      }
       if (zone !== "all") {
         document.getElementById("plants").scrollIntoView({ behavior: "smooth", block: "start" });
       }
@@ -112,7 +116,8 @@ function renderCare(data) {
     document.getElementById("garden-note").textContent = plants.meta.notes;
     const plantApi = renderPlants(plants);
     if (typeof renderMap === "function") {
-      renderMap(plants, (zoneId) => plantApi.setZone(zoneId));
+      const mapApi = renderMap(plants, (zoneId) => plantApi.setZone(zoneId));
+      plantApi.onZoneReset = () => mapApi && mapApi.clearSelection();
     }
     renderCare(care);
   } catch (err) {

@@ -50,6 +50,7 @@ function renderMap(plantsData, onZoneSelect) {
   const fountainT = svgEl("text", { x: 830, y: 430, class: "map-deco-label", "text-anchor": "middle" });
   fountainT.textContent = "⛲";
   deco.append(fountainT);
+  svg.append(deco);
 
   // beds
   const order = ["north", "west", "centre", "east", "south"];
@@ -69,9 +70,9 @@ function renderMap(plantsData, onZoneSelect) {
 
     const cx = shape.x + shape.w / 2;
     const cy = shape.y + shape.h / 2;
-    const shortBed = shape.w > 500; // wide bands (north/south) lay text on one line
+    const isWideBand = shape.w > 500; // wide bands (north/south) lay text on one line
 
-    if (shortBed) {
+    if (isWideBand) {
       const line = svgEl("text", { x: cx, y: cy + 6, "text-anchor": "middle", class: "bed-name" });
       const glyph = svgEl("tspan", {});
       glyph.textContent = (ZONE_GLYPH[zoneId] || "🌱") + "  ";
@@ -115,4 +116,10 @@ function renderMap(plantsData, onZoneSelect) {
 
   host.innerHTML = "";
   host.append(svg);
+
+  return {
+    clearSelection() {
+      svg.querySelectorAll(".bed").forEach(b => b.classList.remove("selected"));
+    }
+  };
 }
