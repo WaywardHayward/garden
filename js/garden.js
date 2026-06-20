@@ -117,7 +117,7 @@ function renderCare(data) {
     const plantApi = renderPlants(plants);
     if (typeof renderMap === "function") {
       const mapApi = renderMap(plants, (zoneId) => plantApi.setZone(zoneId));
-      plantApi.onZoneReset = () => mapApi && mapApi.clearSelection();
+      plantApi.onZoneReset = () => { if (mapApi) mapApi.clearSelection(); };
     }
     renderCare(care);
   } catch (err) {
