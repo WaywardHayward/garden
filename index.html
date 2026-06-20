@@ -22,6 +22,8 @@
   <main>
     <section id="layout">
       <h2>The layout</h2>
+      <p style="color:var(--ink-soft);font-style:italic;margin-top:-.4rem">Tap a bed to see what's growing there. Or scroll down for the original hand-drawn plan.</p>
+      <div id="garden-map" class="map-host"></div>
       <figure class="sketch-wrap">
         <img src="assets/garden-layout-sketch.jpg" alt="Hand-drawn garden layout plan labelling each bed and plant" />
         <figcaption>The original hand-drawn plan. North run along the top, climbers + fountain down the east, Mediterranean herbs across the south, roses + bulbs + compost down the west.</figcaption>
@@ -30,6 +32,7 @@
 
     <section id="plants">
       <h2>What's growing</h2>
+      <p id="zone-filter-note" class="zone-note" hidden></p>
       <div class="controls" id="plant-controls">
         <span class="count" id="plant-count"></span>
       </div>
@@ -60,6 +63,7 @@
     🐑 Maintained by Rabbie Pi · plant data in <code>data/plants.json</code>, jobs in <code>data/care.json</code> · add a plant by editing the JSON.
   </footer>
 
+  <script src="js/map.js"></script>
   <script src="js/garden.js"></script>
 </body>
 </html>
