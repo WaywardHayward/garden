@@ -32,32 +32,63 @@ function plantCard(p) {
   return card;
 }
 
+// Returns an API so the map can drive a zone filter.
 function renderPlants(data) {
   data.zones.forEach(z => (ZONE_LABELS[z.id] = z.label.split(" (")[0]));
   const grid = document.getElementById("plant-grid");
   const controls = document.getElementById("plant-controls");
   const countEl = document.getElementById("plant-count");
+  const zoneNote = document.getElementById("zone-filter-note");
 
-  const types = [...new Set(data.plants.map(p => p.type))].sort();
-  const draw = (filter) => {
+  let typeFilter = "all";
+  let zoneFilter = "all";
+
+  const draw = () => {
     grid.innerHTML = "";
-    const shown = data.plants.filter(p => filter === "all" || p.type === filter);
+    const shown = data.plants.filter(p =>
+      (typeFilter === "all" || p.type === typeFilter) &&
+      (zoneFilter === "all" || p.zone === zoneFilter)
+    );
     shown.forEach(p => grid.append(plantCard(p)));
     countEl.textContent = `${shown.length} of ${data.plants.length}`;
+
+    if (zoneFilter === "all") {
+      zoneNote.hidden = true;
+    } else {
+      zoneNote.hidden = false;
+      zoneNote.innerHTML = "";
+      zoneNote.append(`Showing the ${ZONE_LABELS[zoneFilter] || zoneFilter} bed · `);
+      const clear = el("button", { class: "link-btn" }, "show all beds");
+      clear.addEventListener("click", () => api.setZone("all"));
+      zoneNote.append(clear);
+    }
   };
 
+  const types = [...new Set(data.plants.map(p => p.type))].sort();
   const mkBtn = (label, value) => {
     const b = el("button", value === "all" ? { class: "active" } : {}, label);
     b.addEventListener("click", () => {
       controls.querySelectorAll("button").forEach(x => x.classList.remove("active"));
       b.classList.add("active");
-      draw(value);
+      typeFilter = value;
+      draw();
     });
     return b;
   };
   controls.append(mkBtn("All", "all"));
   types.forEach(t => controls.append(mkBtn(t[0].toUpperCase() + t.slice(1), t)));
-  draw("all");
+
+  const api = {
+    setZone(zone) {
+      zoneFilter = zone;
+      draw();
+      if (zone !== "all") {
+        document.getElementById("plants").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+  draw();
+  return api;
 }
 
 function renderCare(data) {
@@ -79,7 +110,10 @@ function renderCare(data) {
   try {
     const [plants, care] = await Promise.all([load("data/plants.json"), load("data/care.json")]);
     document.getElementById("garden-note").textContent = plants.meta.notes;
-    renderPlants(plants);
+    const plantApi = renderPlants(plants);
+    if (typeof renderMap === "function") {
+      renderMap(plants, (zoneId) => plantApi.setZone(zoneId));
+    }
     renderCare(care);
   } catch (err) {
     document.getElementById("plant-grid").innerHTML =

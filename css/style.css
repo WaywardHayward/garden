@@ -75,6 +75,39 @@ nav.toc a:hover { background: #fff; }
 .tag.zone { background: #e7efe2; color: var(--green-deep); }
 .tag.count { background: #efe7f3; color: var(--lav); }
 
+/* interactive map */
+.map-host { margin: 0 0 1.5rem; }
+svg.gardenmap { width: 100%; height: auto; display: block; font-family: inherit; }
+.map-bg { fill: #eaf1e4; stroke: var(--line); stroke-width: 2; }
+.map-deco { pointer-events: none; }
+.map-shed { fill: #e7ddc9; stroke: #c9bda1; stroke-width: 1.5; }
+.map-fountain { fill: #dbe9f2; stroke: #b9d2e3; stroke-width: 1.5; }
+.map-deco-label { font-size: 18px; fill: var(--ink-soft); }
+.map-compass { font-size: 20px; fill: var(--green-deep); font-weight: bold; letter-spacing: .05em; }
+
+.bed { cursor: pointer; outline: none; }
+.bed-rect {
+  fill: #f7f4ec; stroke: var(--green); stroke-width: 2;
+  transition: fill .18s, stroke-width .18s, filter .18s;
+}
+.bed:hover .bed-rect, .bed:focus-visible .bed-rect {
+  fill: #eef5e8; stroke-width: 3; filter: drop-shadow(0 2px 6px rgba(47,87,51,.18));
+}
+.bed.selected .bed-rect { fill: #d8ead0; stroke: var(--green-deep); stroke-width: 3.5; }
+.bed:focus-visible .bed-rect { stroke-dasharray: 6 4; }
+.bed-glyph { font-size: 30px; }
+.bed-name { font-size: 19px; fill: var(--green-deep); font-weight: 600; }
+.bed-sub { font-size: 13px; fill: var(--ink-soft); }
+.bed-sub-inline { font-size: 14px; fill: var(--ink-soft); font-weight: 400; }
+
+/* zone filter note + inline link button */
+.zone-note { margin: -.3rem 0 .8rem; color: var(--ink-soft); font-style: italic; }
+.link-btn {
+  font: inherit; font-style: normal; background: none; border: none; padding: 0;
+  color: var(--green-deep); text-decoration: underline; cursor: pointer;
+}
+.link-btn:hover { color: var(--green); }
+
 /* layout image */
 .sketch-wrap { text-align: center; }
 .sketch-wrap img { max-width: 100%; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
